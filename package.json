@@ -1,0 +1,24 @@
+{
+  "name": "datashopping",
+  "version": "1.0.0",
+  "description": "data shopping mall with Python",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/showpark/datashopping.git"
+  },
+  "scripts": {
+    "css": "gulp"
+  },
+  "homepage": "https://github.com/showpark/datashopping#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.1.0",
+    "gulp": "^4.0.2",
+    "gulp-csso": "^4.0.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.1",
+    "postcss-cli": "^8.3.0",
+    "tailwindcss": "^2.0.1"
+  }
+}

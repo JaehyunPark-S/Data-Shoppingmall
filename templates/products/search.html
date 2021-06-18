@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    Search
+{% endblock page_title %}
+
+
+{% block content %}
+
+
+<h3 class="mb-12 text-2xl text-center font-medium">Result</h3>
+
+    <div class="container mx-auto pb-10">
+        <div class="flex flex-wrap -mx-24 mb-10">
+            {% for product in products %}
+            {% include "mixins/product_card.html" with product=product %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="flex items-center justify-center mx-auto container">
+        {% if products.has_previous %}
+        <a href="/?page={{products.previous_page_number}}" class="text-gray-600">
+            <i class="fas fa-arrow-left fa-lg"></i>
+        </a>
+        {% endif %}
+
+        <span class="mx-3 font-medium text-lg">{{products.number}} of {{products.paginator.num_pages}}</span>
+
+        {% if products.has_next %}
+        <a href="/?page={{products.next_page_number}}" class="text-gray-600">
+            <i class="fas fa-arrow-right fa-lg"></i>
+        </a>
+        {% endif %}
+    </div>
+{% endblock content %}

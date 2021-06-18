@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+{{user_obj.first_name}}'s Buys
+{% endblock page_title %}
+
+
+{% block content %}
+
+<div class="min-h-75vh">
+    {% if user_obj.buys.count > 0 %}
+    <h3 class="mb-12 text-2xl text-center font-bold">{{user_obj.first_name}}'s Buys</h3>
+    <div class="container mx-auto pb-10">
+        <div class="flex flex-wrap -mx-24 mb-10">
+            {% for buy in user_obj.buys.all %}
+                {% include "mixins/product_card.html" with product=buy.product %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}

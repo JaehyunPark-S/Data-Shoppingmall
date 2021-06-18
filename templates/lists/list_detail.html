@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+{{user_obj.first_name}}'s Fav
+{% endblock page_title %}
+
+
+{% block content %}
+
+    <div class="min-h-75vh">
+
+        <h3 class="mb-12 text-2xl text-center font-medium">Favourite</h3>
+        
+        <div class="container mx-auto pb-10">
+            <div class="flex flex-wrap -mx-24 mb-10">
+                {% for product in user.list.products.all %}
+                    {% include "mixins/product_card.html" with product=product %}
+                {% endfor %}
+            </div>
+        </div>
+            
+    </div>
+{% endblock content %}
